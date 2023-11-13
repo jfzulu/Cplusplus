@@ -7,6 +7,9 @@ int main()
 {
     Avion avion;
     inicializarAvion(&avion);
+    inicializarReservas(&avion);
+    //listarAvion(&avion);
+    //imprimirAvion(&avion);
     int opc;
     bool valido = false;
 
@@ -29,7 +32,7 @@ int main()
         switch (opc)
         {
         case 1:
-            ingresarReserva();
+            ingresarReserva(&avion);
             break;
         case 2:
             finalizarReserva();

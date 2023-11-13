@@ -19,7 +19,7 @@ struct Reserva{
 
 };
 
-struct Asientos{
+struct Asiento{
     int numero_vuelo;
     string destino;
     int fila;
@@ -32,15 +32,21 @@ struct Asientos{
 struct Avion{
     int numero_vuelo;
     string destino;
-    Asientos asientos[filas][columnas];
+    Asiento asientos[filas][columnas];
     Reserva reservas[50];
     int contador_reservas;
 };
 
 int definirCategoria(int i);
+int charToInt(char c);
+char retornarLetra(int i);
+void listarDisponibles(Avion *avion, int cantidad);
+bool validarAsientos (Asiento asientoPrevio, Asiento asientoAux, Avion *avion);
+void inicializarReservas(Avion *avion);
 void inicializarAvion(Avion *avion);
-void mostrarAvion(Avion *avion);
-void ingresarReserva();
+void listarAvion(Avion *avion);
+void imprimirAvion(Avion *avion);
+void ingresarReserva(Avion *avion);
 void finalizarReserva();
 void consultarRegistros();
 
