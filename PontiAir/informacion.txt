@@ -1,0 +1,4 @@
+Categoría: BUSINESS, Total: 7600
+Categoría: EMERGENCIA, Total: 500
+Categoría: ESTANDAR, Total: 2800
+Categoría: ECONOMICA, Total: 100

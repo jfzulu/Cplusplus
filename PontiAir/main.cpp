@@ -6,18 +6,19 @@ using namespace std;
 int main()
 {
     Avion avion;
-    inicializarAvion(&avion);
-    inicializarReservas(&avion);
-    //listarAvion(&avion);
-    //imprimirAvion(&avion);
+    inicializarAvion(avion);
+    inicializarReservas(avion);
+    //listarAvion(avion);
+    /* imprimirAvion(avion); */
     int opc;
     bool valido = false;
 
     do
     {
+        imprimirAvion(avion);
         valido = false;
         //cout << "\033[2J\033[H";
-        cout << "\n\nBIENVENIDO A PONTIAIR" << endl;
+        cout << "\nBIENVENIDO A PONTIAIR" << endl;
         cout << "1. Ingresar reserva" << endl;
         cout << "2. Finalizar reserva" << endl;
         cout << "3. Consultar registros por fila" << endl;
@@ -32,13 +33,28 @@ int main()
         switch (opc)
         {
         case 1:
-            ingresarReserva(&avion);
+            ingresarReserva(avion);
             break;
         case 2:
-            finalizarReserva();
+            finalizarReserva(avion);
             break;
         case 3:
-            consultarRegistros();
+            consultarRegistros(avion);
+            break;
+        case 4:
+            buscarReserva(avion);
+            break;
+        case 5:
+            mostrarPortal(avion);
+            break;
+        case 6:
+            consultarAsientosOcupados(avion);
+            break;
+        case 7:
+            calcularReservasCategoria(avion);
+            break;
+        case 8:
+            calcularGananciaAvion(avion);
             break;
         }
         if (opc >= 1 && opc <= 9)
@@ -54,7 +70,7 @@ int main()
         cout << "Presione Enter para continuar...";
         cin.ignore();
         cin.get();
-        cout << "\033[2J\033[H";
+        
 
     } while (opc != 9 && valido == true);
 
